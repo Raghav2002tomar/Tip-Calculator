@@ -1,0 +1,109 @@
+<html>
+
+<head>
+   <title>tip calculater</title>
+   <style>
+      * {
+         padding: 0%;
+         margin: 0%;
+         box-sizing: border-box;
+
+
+      }
+
+      main {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-top: 100px;
+         flex-direction: column;
+      }
+
+      body {
+         background-image: url("https://imgs.search.brave.com/o4ysc-xtZU2rkc5DJgv8X9YbHqXP27FDhvRclXmf4dE/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93YWxs/dXAubmV0L3dwLWNv/bnRlbnQvdXBsb2Fk/cy9taXhlZC9BbGxf/TWF0aF9Gb3JtdWxh/X1BpY3R1cmUuanBn");
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         /* background-color: white; */
+         image-resolution: light;
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+
+      .box {
+         background: rgb(34, 193, 195);
+         background: linear-gradient(0deg, rgba(34, 193, 195, 1) 1%, rgba(253, 187, 45, 1) 98%);
+         height: 400;
+         padding-top: 28;
+         padding-left: 100px;
+         width: 400px;
+         box-shadow: 1px 10px 15px 10px gray;
+      }
+
+
+      h1 {
+         padding-bottom: 20px;
+         text-shadow: 1px 1px 2px white;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 5px;
+      }
+
+      input {
+         border-radius: 4px;
+         padding: 6px;
+         font-size: 15px;
+
+      }
+
+      button {
+         padding: 5px;
+         border-radius: 5px;
+         font-size: 20px;
+         background: rgb(238, 174, 202);
+         background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+         color: rgb(7, 23, 24);
+      }
+   </style>
+</head>
+
+<body>
+   <main>
+      <h1>Tip calculator</h1>
+      <div class="box">
+
+         <label>Bill Amount</label>
+         <input type="text" id="Bill_Amount"><br><br>
+
+         <label>Tip pers</label>
+         <input type="text" id="Tip_pers"><br><br>
+
+         <label>Tip Amount</label>
+         <input type="text" disabled id="Tip_Amount"><br><br>
+
+         <label>Total Bill</label>
+         <input type="text" disabled id="Total_Bill"><br><br>
+
+         <button onclick="calculate()">calculate</button>
+
+
+      </div>
+   </main>
+
+   <script>
+      const calculate = () => {
+         let Amount = document.getElementById("Bill_Amount").value;
+
+         let perc = document.getElementById("Tip_pers").value;
+
+         let tip = Amount * (perc / 100);
+         document.getElementById("Tip_Amount").value;
+         let total = tip + Number(Amount);
+         //  alert (total);
+         document.getElementById("Tip_Amount").value = tip;
+         document.getElementById("Total_Bill").value = total;
+      }
+   </script>
+</body>
+
+</html>
